@@ -1,7 +1,6 @@
 #!/bin/bash
 brew update
 brew upgrade
-brew prune
 for c in $(brew cask list -1); do
     info=$(brew cask info $c)
     current_ver=$(echo "$info" | gcut -d$'\n' -f1 | gtr -d ' ' | gcut -d':' -f 2 | awk -F \( '{ print $1 }')
